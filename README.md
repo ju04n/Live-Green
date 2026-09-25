@@ -430,15 +430,3 @@ Las pruebas permiten verificar:
 **Estado:** En desarrollo.
 
 El proyecto continúa evolucionando mediante la incorporación y mejora de funcionalidades, módulos, validaciones, procesos CRUD y características relacionadas con la administración de la información.
-
----
-
-# 👨‍💻 Repositorio
-
-Repositorio oficial:
-
-**Live Green**
-
-https://github.com/ju04n/Live-Green
-
----
