@@ -425,21 +425,6 @@ Las pruebas permiten verificar:
 
 ---
 
-# 🔒 Seguridad
-
-El proyecto considera algunas prácticas básicas de seguridad:
-
-* Uso de variables de entorno.
-* No publicar credenciales de MongoDB.
-* Separación del frontend y backend.
-* Validación de información recibida.
-* Configuración de CORS.
-* Uso de `.gitignore` para excluir archivos sensibles.
-
-Estas medidas forman parte del proceso de aprendizaje y pueden ampliarse durante las siguientes etapas del desarrollo.
-
----
-
 # 📌 Estado del proyecto
 
 **Estado:** En desarrollo.
