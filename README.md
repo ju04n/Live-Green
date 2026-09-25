@@ -14,8 +14,6 @@ Live Green busca proporcionar una plataforma web orientada a la consulta y admin
 
 El sistema cuenta con una interfaz desarrollada en **React**, un servidor backend construido con **Node.js y Express**, y una base de datos administrada mediante **MongoDB Atlas**.
 
-La aplicación permite gestionar diferentes módulos del sistema mediante operaciones CRUD (**Crear, Consultar, Actualizar y Eliminar**), facilitando la administración de la información desde el sistema.
-
 El proyecto se encuentra en proceso de desarrollo como parte de las actividades prácticas de formación del programa ADSO.
 
 ---
@@ -410,43 +408,6 @@ Este modelo permite separar la interfaz de usuario de la lógica del servidor y 
 
 ---
 
-# 🚀 Despliegue
-
-El proyecto está preparado para separar los servicios de frontend y backend.
-
-Para un despliegue en producción se deben configurar:
-
-### Frontend
-
-El proyecto React/Vite puede desplegarse en servicios compatibles con aplicaciones frontend, configurando el comando de construcción:
-
-```bash
-npm run build
-```
-
-El resultado generado por Vite se utiliza como versión de producción.
-
-### Backend
-
-El backend Node.js/Express debe desplegarse en un servicio que permita ejecutar aplicaciones Node.js.
-
-Se deben configurar las variables de entorno del servidor, especialmente:
-
-```env
-MONGODB_URI=TU_CADENA_DE_CONEXION
-PORT=5000
-```
-
-### MongoDB Atlas
-
-MongoDB Atlas funciona como servicio de base de datos en la nube.
-
-Para permitir la conexión desde el backend desplegado se debe configurar correctamente el acceso de red y las credenciales de la base de datos.
-
-> Las URL definitivas de producción se deben agregar a esta sección cuando el frontend y backend sean desplegados.
-
----
-
 # 🧪 Pruebas y calidad
 
 Durante el desarrollo se realizan pruebas sobre las funcionalidades principales del sistema, especialmente sobre los procesos CRUD y la comunicación entre frontend, backend y base de datos.
@@ -476,28 +437,6 @@ El proyecto considera algunas prácticas básicas de seguridad:
 * Uso de `.gitignore` para excluir archivos sensibles.
 
 Estas medidas forman parte del proceso de aprendizaje y pueden ampliarse durante las siguientes etapas del desarrollo.
-
----
-
-# 📚 Contexto académico
-
-**Proyecto de formación — SENA**
-
-**Programa:** Análisis y Desarrollo de Software (ADSO)
-
-Live Green hace parte del proceso de formación orientado al desarrollo de competencias relacionadas con:
-
-* Análisis de requerimientos.
-* Diseño de software.
-* Desarrollo frontend.
-* Desarrollo backend.
-* Gestión de bases de datos.
-* Desarrollo de APIs.
-* Control de versiones.
-* Pruebas de software.
-* Implementación y despliegue de aplicaciones.
-
-El proyecto permite aplicar de manera práctica los conocimientos adquiridos durante el proceso de formación.
 
 ---
 
