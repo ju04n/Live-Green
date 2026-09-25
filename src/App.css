@@ -1,0 +1,1762 @@
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+  --verde: #2e7d32;
+  --verde-hover: #388e3c;
+  --verde-claro: #66bb6a;
+  --verde-oscuro: #245b2a;
+
+  --texto: #333;
+  --texto-suave: #59685c;
+
+  --blanco: #fff;
+
+  --degradado: linear-gradient(
+    135deg,
+    #2e7d32,
+    #66bb6a
+  );
+
+  --sombra: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+  --radio: 15px;
+}
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  color: var(--texto);
+
+  font-size: 16px;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.20),
+      rgba(232, 245, 233, 0.20)
+    ),
+    url("./assets/imgs/fondo.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   BOTONES GENERALES
+========================================= */
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary,
+.btn-login,
+.btn-registrar,
+.btn-ver {
+  background: var(--degradado);
+  color: white;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.25);
+}
+
+.btn-primary:hover,
+.btn-login:hover,
+.btn-registrar:hover,
+.btn-ver:hover {
+  background: linear-gradient(
+    135deg,
+    #388e3c,
+    #81c784
+  );
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+  min-height: 76px;
+
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 3px 15px rgba(46, 125, 50, 0.16);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+
+  object-fit: contain;
+}
+
+.logo span {
+  color: var(--verde);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+
+  color: var(--verde-oscuro);
+
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--verde-claro);
+}
+
+.btn-login {
+  padding: 12px 25px;
+  border-radius: 25px;
+}
+
+
+/* =========================================
+   BANNER
+========================================= */
+
+.banner {
+  width: 100%;
+  padding-top: 76px;
+}
+
+.banner-image {
+  width: 100%;
+  height: 500px;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.banner-overlay {
+  text-align: center;
+}
+
+.banner-overlay p {
+  color: white;
+
+  font-size: 58px;
+  font-weight: 800;
+
+  letter-spacing: 6px;
+
+  text-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.banner-info {
+  max-width: 950px;
+
+  margin: auto;
+
+  padding: 70px 30px 80px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 0 0 20px 20px;
+}
+
+.banner-small {
+  color: var(--verde);
+
+  font-size: 15px;
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+}
+
+.banner-info h1 {
+  color: var(--verde-oscuro);
+
+  font-size: 50px;
+  line-height: 1.15;
+
+  margin-bottom: 25px;
+}
+
+.banner-info h1 span {
+  color: var(--verde-hover);
+}
+
+.banner-text {
+  max-width: 750px;
+
+  margin: 0 auto 30px;
+
+  color: var(--texto-suave);
+
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  width: auto;
+  min-width: 130px;
+  max-width: 180px;
+
+  padding: 12px 22px;
+
+  border-radius: 30px;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   MISIÓN / VISIÓN
+========================================= */
+
+.section {
+  min-height: 500px;
+
+  padding: 90px 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #1b5e20,
+    #2e7d32,
+    #66bb6a
+  );
+
+  color: white;
+
+  margin: 50px auto;
+
+  width: 90%;
+  max-width: 1100px;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.vision {
+  background: linear-gradient(
+    135deg,
+    #1b5e20,
+    #388e3c,
+    #81c784
+  );
+}
+
+.section-box {
+  max-width: 800px;
+  text-align: center;
+}
+
+.section-title {
+  color: #d8ffd9;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 15px;
+}
+
+.section-box h2 {
+  color: white;
+
+  font-size: 44px;
+
+  margin-bottom: 25px;
+}
+
+.section-box p:not(.section-title) {
+  color: #f0fff1;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   CONTACTANOS
+========================================= */
+
+.contact-section {
+  min-height: 450px;
+
+  padding: 90px 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 50px auto;
+
+  border-radius: 25px;
+
+  background: linear-gradient(
+    135deg,
+    #1b5e20,
+    #2e7d32,
+    #66bb6a
+  );
+
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.contact-box {
+  max-width: 700px;
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.contact-box p:not(.section-title) {
+  color: #e8f5e9;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login {
+  width: 100%;
+
+  max-width: 550px;
+
+  margin: 120px auto 60px;
+
+  padding: 0 50px 45px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+
+  border: none;
+
+  position: relative;
+}
+
+.login h2 {
+  margin: 0 -50px 40px;
+
+  padding: 25px 35px;
+
+  background: var(--degradado);
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.login input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 12px 15px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #b7d9ba;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #333;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.login input:focus {
+  border-color: var(--verde);
+
+  box-shadow:
+    0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+.login p {
+  margin: 10px 0;
+
+  color: #555;
+
+  font-size: 16px;
+}
+
+.botones-login {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 15px;
+
+  margin-bottom: 15px;
+}
+
+.botones-login button {
+  flex: 1;
+
+  padding: 14px;
+
+  border-radius: 10px;
+}
+
+.cambiar-contrasena {
+  display: block;
+
+  margin-top: 20px;
+
+  color: var(--verde);
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  text-align: center;
+
+  font-size: 16px;
+}
+
+.cambiar-contrasena:hover {
+  text-decoration: underline;
+}
+
+.contador {
+  background: #ffebee;
+
+  color: #c62828 !important;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  margin: 10px 0;
+
+  font-size: 16px;
+}
+
+.mensaje {
+  color: #d33b32;
+
+  font-size: 16px;
+
+  margin: 10px 0;
+}
+
+.mensaje.correcto {
+  color: #328044;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   REGISTRO
+========================================= */
+
+.contenedor {
+  min-height: 100vh;
+
+  padding: 120px 20px 60px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+}
+
+.tarjeta {
+  width: 100%;
+
+  max-width: 750px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(8px);
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.22);
+
+  border: none;
+}
+
+.encabezado {
+  padding: 25px;
+
+  text-align: center;
+
+  background: var(--degradado);
+
+  color: white;
+}
+
+.encabezado h3 {
+  font-size: 27px;
+}
+
+.cuerpo {
+  padding: 35px;
+}
+
+.fila {
+  display: flex;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+.campo {
+  flex: 1;
+
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--verde-oscuro);
+
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #b7d9ba;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  outline: none;
+
+  font-size: 16px;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--verde);
+
+  box-shadow:
+    0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+.btn-registrar,
+.btn-cancelar {
+  width: auto;
+
+  min-width: 130px;
+  max-width: 180px;
+
+  padding: 12px 22px;
+
+  border-radius: 10px;
+
+  margin-right: 10px;
+
+  font-size: 16px;
+}
+
+.btn-cancelar {
+  background: #78909c;
+
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background: #607d8b;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RECUPERAR CONTRASEÑA
+========================================= */
+
+.recuperar {
+  min-height: 100vh;
+
+  padding: 120px 20px 60px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+}
+
+.recuperar-contenedor {
+  width: 100%;
+
+  max-width: 500px;
+
+  padding: 45px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(8px);
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.22);
+
+  text-align: center;
+
+  border: none;
+}
+
+.recuperar-contenedor h2 {
+  margin-bottom: 15px;
+
+  color: var(--verde-oscuro);
+
+  font-size: 32px;
+}
+
+.descripcion {
+  color: #555;
+
+  margin-bottom: 25px;
+
+  line-height: 1.5;
+
+  font-size: 16px;
+}
+
+.recuperar-contenedor input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #b9d5be;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+.recuperar-contenedor input:focus {
+  border-color: var(--verde);
+
+  box-shadow:
+    0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+.recuperar-contenedor button {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 8px;
+
+  border-radius: 10px;
+
+  background: var(--verde);
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.recuperar-contenedor button:hover {
+  background: var(--verde-hover);
+}
+
+.recuperar-contenedor .volver {
+  background: transparent;
+
+  color: var(--verde);
+
+  margin-top: 12px;
+}
+
+.recuperar-contenedor .volver:hover {
+  background: rgba(76, 175, 80, 0.10);
+}
+
+
+/* =========================================
+   MODULACIÓN
+========================================= */
+
+.dashboard {
+  min-height: 100vh;
+
+  padding-top: 76px;
+
+  background: transparent;
+
+  color: #183b24;
+}
+
+.dashboard .navbar {
+  position: static;
+
+  width: 100%;
+
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  color: #176b3a;
+}
+
+.dashboard .navbar h1 {
+  font-size: 38px;
+
+  margin-bottom: 10px;
+
+  color: #176b3a;
+}
+
+.dashboard .navbar p {
+  font-size: 20px;
+
+  color: #5b6f61;
+}
+
+.contenido {
+  padding: 50px 30px;
+}
+
+.cards-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.90);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15);
+
+  padding-bottom: 25px;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.20);
+}
+
+.card-imagen {
+  width: 100%;
+
+  height: 190px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.card h2 {
+  margin: 20px 10px;
+
+  font-size: 26px;
+
+  color: #176b3a;
+}
+
+.btn-ver {
+  width: auto;
+
+  min-width: 110px;
+  max-width: 160px;
+
+  padding: 11px 20px;
+
+  border-radius: 25px;
+
+  font-size: 16px;
+}
+
+.footer {
+  margin-top: 30px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  background: #075e35;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   COOKIES
+========================================= */
+
+.cookie-banner {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 20px 7%;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 -3px 20px rgba(46, 125, 50, 0.20);
+
+  z-index: 2000;
+}
+
+.cookie-content {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.cookie-content h3 {
+  color: var(--verde-oscuro);
+
+  margin-bottom: 8px;
+
+  font-size: 20px;
+}
+
+.cookie-content p {
+  color: var(--texto-suave);
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+.cookie-button {
+  width: auto;
+
+  min-width: 120px;
+
+  padding: 12px 23px;
+
+  border-radius: 25px;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   BARRA DE BÚSQUEDA
+========================================= */
+
+.inicio-search {
+  width: 100%;
+
+  max-width: 650px;
+
+  height: 52px;
+
+  margin: 22px 0 28px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 2px solid #d9e5d8;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.inicio-search:focus-within {
+  border-color: #2f7d32;
+
+  box-shadow:
+    0 3px 10px rgba(47, 125, 50, 0.12);
+}
+
+.inicio-search-icon {
+  width: 48px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 21px;
+
+  color: #2f7d32;
+}
+
+.inicio-search input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  padding: 0 10px;
+
+  font-size: 16px;
+
+  color: #234d27;
+}
+
+.inicio-search input::placeholder {
+  color: #8a998b;
+
+  font-size: 15px;
+}
+
+.inicio-search-clear {
+  width: 40px;
+
+  height: 40px;
+
+  margin-right: 6px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #7b877c;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.inicio-search-clear:hover {
+  background: #edf5ed;
+
+  color: #2f7d32;
+}
+
+
+/* =========================================
+   FORMULARIOS LIVE GREEN
+========================================= */
+
+.formulario-livegreen {
+  width: 100%;
+
+  max-width: 650px;
+
+  margin: 30px auto;
+
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
+
+  border: 1px solid #d9e5d8;
+}
+
+
+/* =========================================
+   TÍTULO DEL FORMULARIO
+========================================= */
+
+.formulario-livegreen h2 {
+  margin-bottom: 30px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 2px solid #d9e5d8;
+
+  color: var(--verde-oscuro);
+
+  font-size: 32px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.formulario-livegreen form > div:not(.formulario-botones):not(.formulario-error) {
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   ETIQUETAS
+========================================= */
+
+.formulario-livegreen label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--verde-oscuro);
+
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   INPUTS Y SELECT
+========================================= */
+
+.formulario-livegreen input,
+.formulario-livegreen select,
+.formulario-livegreen textarea {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #b7d9ba;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #333;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+
+  resize: vertical;
+}
+
+
+/* =========================================
+   ALTURA INPUTS
+========================================= */
+
+.formulario-livegreen input,
+.formulario-livegreen select {
+  height: 48px;
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.formulario-livegreen textarea {
+  min-height: 110px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.formulario-livegreen input::placeholder,
+.formulario-livegreen textarea::placeholder {
+  color: #8a998b;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   CAMPOS AL SELECCIONAR
+========================================= */
+
+.formulario-livegreen input:focus,
+.formulario-livegreen select:focus,
+.formulario-livegreen textarea:focus {
+  border-color: var(--verde);
+
+  box-shadow:
+    0 0 0 3px rgba(46, 125, 50, 0.12);
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.formulario-livegreen select {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   SELECT DESACTIVADO
+========================================= */
+
+.formulario-livegreen select:disabled {
+  background: #f1f5f1;
+
+  color: #7b877c;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   BOTONES DEL FORMULARIO
+========================================= */
+
+.formulario-botones {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 28px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e1e9e1;
+}
+
+
+/* =========================================
+   BOTÓN AGREGAR / GUARDAR
+========================================= */
+
+.admin-primary-button {
+  flex: 0 0 auto;
+
+  width: auto;
+
+  min-width: 130px;
+
+  max-width: 180px;
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: var(--verde);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.admin-primary-button:hover {
+  background: var(--verde-hover);
+
+  transform: translateY(-2px);
+}
+
+.admin-primary-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   BOTÓN CANCELAR
+========================================= */
+
+.admin-secondary-button {
+  flex: 0 0 auto;
+
+  width: auto;
+
+  min-width: 110px;
+
+  max-width: 160px;
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #78909c;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.admin-secondary-button:hover {
+  background: #607d8b;
+
+  transform: translateY(-2px);
+}
+
+.admin-secondary-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   MENSAJE DE ERROR
+========================================= */
+
+.formulario-error {
+  margin-bottom: 20px;
+
+  padding: 12px 15px;
+
+  border-left: 4px solid #c62828;
+
+  border-radius: 8px;
+
+  background: #ffebee;
+
+  color: #c62828;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   MENSAJE DE ÉXITO
+========================================= */
+
+.formulario-exito {
+  margin-bottom: 20px;
+
+  padding: 12px 15px;
+
+  border-left: 4px solid var(--verde);
+
+  border-radius: 8px;
+
+  background: #e8f5e9;
+
+  color: var(--verde-oscuro);
+
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   TEXTO DE CARGA
+========================================= */
+
+.formulario-livegreen p {
+  color: var(--texto-suave);
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   ADMINISTRADOR
+========================================= */
+
+.admin-dashboard {
+  font-size: 16px;
+}
+
+.admin-dashboard h1 {
+  font-size: 34px;
+}
+
+.admin-dashboard h2 {
+  font-size: 28px;
+}
+
+.admin-dashboard h3 {
+  font-size: 22px;
+}
+
+.admin-dashboard table {
+  font-size: 16px;
+}
+
+.admin-dashboard th {
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.admin-dashboard td {
+  font-size: 16px;
+}
+
+.admin-dashboard button {
+  font-size: 16px;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .menu {
+    gap: 12px;
+  }
+
+  .banner-image {
+    height: 400px;
+  }
+
+  .banner-overlay p {
+    font-size: 45px;
+  }
+
+  .banner-info h1 {
+    font-size: 42px;
+  }
+
+  .cookie-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULAR
+========================================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logo img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu a {
+    display: none;
+  }
+
+  .banner-image {
+    height: 320px;
+  }
+
+  .banner-overlay p {
+    font-size: 32px;
+
+    letter-spacing: 3px;
+  }
+
+  .banner-info {
+    padding: 50px 20px 65px;
+  }
+
+  .banner-info h1 {
+    font-size: 34px;
+  }
+
+  .banner-text {
+    font-size: 16px;
+  }
+
+  .section,
+  .contact-section {
+    width: 92%;
+
+    padding: 70px 20px;
+
+    margin: 30px auto;
+  }
+
+  .section-box h2,
+  .contact-box h2 {
+    font-size: 32px;
+  }
+
+  .section-box p:not(.section-title),
+  .contact-box p:not(.section-title) {
+    font-size: 16px;
+  }
+
+  .fila {
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .login {
+    width: 92%;
+
+    margin: 110px auto 40px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .login h2 {
+    margin-left: -25px;
+
+    margin-right: -25px;
+
+    font-size: 26px;
+  }
+
+  .botones-login {
+    flex-direction: column;
+  }
+
+  .botones-login button {
+    width: 100%;
+  }
+
+  .tarjeta {
+    width: 95%;
+  }
+
+  .cuerpo {
+    padding: 25px 20px;
+  }
+
+  .recuperar {
+    padding: 110px 15px 40px;
+  }
+
+  .recuperar-contenedor {
+    padding: 30px 20px;
+  }
+
+  .dashboard .navbar h1 {
+    font-size: 30px;
+  }
+
+  .dashboard .navbar p {
+    font-size: 17px;
+  }
+
+
+  /* =====================================
+     FORMULARIO EN CELULAR
+  ===================================== */
+
+  .formulario-livegreen {
+    width: 95%;
+
+    margin: 20px auto;
+
+    padding: 25px 20px;
+
+    border-radius: 15px;
+  }
+
+  .formulario-livegreen h2 {
+    font-size: 27px;
+
+    margin-bottom: 25px;
+  }
+
+  .formulario-livegreen label {
+    font-size: 16px;
+  }
+
+  .formulario-livegreen input,
+  .formulario-livegreen select,
+  .formulario-livegreen textarea {
+    font-size: 16px;
+  }
+
+
+  /* En celular los botones ocupan todo el ancho */
+  .formulario-botones {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .admin-primary-button,
+  .admin-secondary-button {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .btn-primary,
+  .btn-registrar,
+  .btn-ver {
+    max-width: none;
+  }
+
+
+  /* Administrador en celular */
+  .admin-dashboard h1 {
+    font-size: 28px;
+  }
+
+  .admin-dashboard h2 {
+    font-size: 24px;
+  }
+
+  .admin-dashboard h3 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================
+   BOTÓN INICIAR SESIÓN (ESTILO IMAGEN)
+========================================= */
+
+.btn-login {
+  /* Ancho y dimensión */
+  width: 100%;
+  padding: 12px 25px;
+
+  /* Fondo degradado verde */
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: #ffffff;
+
+  /* Bordes completamente redondeados */
+  border: none;
+  border-radius: 25px;
+
+  /* Tipografía */
+  font-size: 16px;
+  font-weight: bold;
+
+  /* Sombra inferior de elevación */
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  
+  /* Interacción */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover (al pasar el mouse) */
+.btn-login:hover {
+  background: linear-gradient(135deg, #388e3c, #81c784);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.4);
+}
+
+/* Efecto active (al hacer clic) */
+.btn-login:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+}
+
+/* Estado deshabilitado */
+.btn-login:disabled {
+  background: #a5b5a7;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
